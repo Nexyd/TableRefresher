@@ -5,7 +5,8 @@ Usage:
 
 In the table's ViewController add
 
-#Init
+### Init
+```
 private var refresher: TableRefresher
 
 init() {
@@ -15,18 +16,22 @@ init() {
 
 override func viewDidLoad() {
     ...
-    # set the spinner to be used (this is optional)
+    // set the spinner to be used (this is optional)
     self.refresher.set(spinner: self.spinner)
 }
+```
 
-# Suscribe to this method to perform the pull refresh
+### Suscribe to this method to perform the pull refresh
+```
 func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     refresher.validatePullRefresh(withDirection: .up,
         for: categoryView.categoriesTableView,
         with: getCocktailCategories)
 }
+```
 
-# Suscribe to this method to check the direction in which the user pulls
+### Suscribe to this method to check the direction in which the user pulls
+```
 func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity
     velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 
@@ -39,3 +44,4 @@ func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity
         refresher.set(direction: .down)
     }
 }
+```
