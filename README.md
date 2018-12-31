@@ -1,7 +1,7 @@
 # TableRefresher
 Quick implementation of a pull to refresh action.
 
-Usage:
+## Usage:
 
 In the table's ViewController add
 
